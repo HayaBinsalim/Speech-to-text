@@ -1,9 +1,9 @@
 # Speech-to-text
 # Description 
-This project is a speech-to-text converter based on HTML, JavaScript, and PHP. 
+This project is a speech-to-text converter that displays the converted text and stores it into the database. 
 
 ## Front end
-The HTML page is what the user will see. It includes a recording button and a textbox below it to show the converted text. The cammands below were used to build this page. 
+The ```HTML``` page is responsible for the user interface. It is what the user will see. It includes a recording button and a textbox below it to show the converted text. The cammands below were used to build this page. 
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -71,8 +71,8 @@ The HTML page is what the user will see. It includes a recording button and a te
 </html>
 ```
 
-## Back end 
-The language used for the back end here is javascript. It converts the speech recorded into text, display it on the textbox in the front end, and sends it to another location—PHP. The commands below are the ones used for this file. 
+## Speech recognition
+This sets up a speech recognition functionality in a web page using ```JavaScript```. It is also responsible for displaying the resul and saving the recognized text to a database via a back-end ```PHP``` script. The commands below are the ones used for this file. 
 ```
 document.addEventListener('DOMContentLoaded', function() {
     const recordButton = document.getElementById('record');
@@ -134,7 +134,7 @@ function saveTextToDatabase(text) {
 ```
 
 ## Storing in database 
-We will be using PHP here. This part is where the text and the database meet. The text is sent by the back end to this file that will send it then to the databse and store it there. It will show “Logged successfully” for when the text is stored without errors. The commands below are the ines used for this file. 
+We will be using ```PHP``` here. This part is where the text and the database meet. The text is sent by the back end to this file that will send it then to the databse and store it there. It manages the connection to the ```MySQL``` database and executes the SQL query to store the data. It will show “Logged successfully” for when the text is stored without errors. The commands below are the ines used for this file. 
 ```
 <?php
 header('Content-Type: application/json');
@@ -175,6 +175,7 @@ The figures below are screenshots of what the user sees. The page that asks them
  ![image](https://github.com/user-attachments/assets/983ff567-a1ba-480b-934e-3966735a98c1)
 
 <br /> 
+This figure shows the page after recording stopped. <br /> 
 
  ![image](https://github.com/user-attachments/assets/9c377d46-517a-40d0-b73d-a08509e9566d)
 
